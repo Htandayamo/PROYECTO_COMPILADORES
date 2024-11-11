@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SISTEMA DE CHAT UAB</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <div class="sidebar">
+            <header>
+                <h1>UAB CONNECT</h1>
+                <button id="create-account">Crear Cuenta</button>
+            </header>
+            <div id="chat-list" class="chat-list">
+                <!-- Lista fija de departamentos -->
+                <div class="chat-item" onclick="openChatByName('Administración')">Administración</div>
+                <div class="chat-item" onclick="openChatByName('Restaurante Universitario')">Restaurante Universitario</div>
+                <div class="chat-item" onclick="openChatByName('Departamento de TI')">Departamento de TI</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Salud')">Facultad de Salud</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Ingeniería')">Facultad de Ingeniería</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Empresariales')">Facultad de Empresariales</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Teología')">Facultad de Teología</div>
+                <div class="chat-item" onclick="openChatByName('Departamento de Finanzas')">Departamento de Finanzas</div>
+                <div class="chat-item" onclick="openChatByName('Departamento de Marketing')">Departamento de Marketing</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Humanidades')">Facultad de Humanidades</div>
+                <div class="chat-item" onclick="openChatByName('Facultad de Humanidades')">Biblioteca UAB</div>
+                <div class="chat-item" onclick="openChatByName('Departamento de Musica')">Departamento de Musica</div>
+            </div>
+        </div>
+
+        <div id="chat-window" class="chat-window">
+            <h2 id="chat-title">Selecciona un chat</h2>
+            <div id="messages" class="messages"></div>
+            <div class="message-input-container">
+                <input type="text" id="message-input" placeholder="Escribe un mensaje..." />
+                <button id="send-message">Enviar</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

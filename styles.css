@@ -1,0 +1,120 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif;
+    background-color: z#e9ecef;
+    margin: 0;
+    padding: 0;
+}
+
+.app-container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar (chats) */
+.sidebar {
+    width: 25%;
+    background-color: #f1f1f1;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar header {
+    background-color: #d33925;
+    color: white;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.chat-list {
+    flex: 1;
+    padding: 10px;
+    overflow-y: auto;
+}
+
+.chat-list div {
+    padding: 10px;
+    margin-bottom: 5px;
+    background-color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.chat-list div:hover {
+    background-color: #ddd;
+}
+
+/* Chat Window (mensajes) */
+.chat-window {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px;
+}
+
+#chat-title {
+    text-align: center;
+    color: #d33325;
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    padding-right: 10px;
+}
+
+.message-input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding-top: 10px;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+button {
+    padding: 10px;
+    background-color: #d35025;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b84420;
+}
+
+/* Estilos de los mensajes */
+.message {
+    margin-bottom: 10px;
+    max-width: 60%;
+    padding: 10px;
+    border-radius: 10px;
+    clear: both;
+}
+
+.message.sent {
+    background-color: #dcf8c6;
+    align-self: flex-end;
+}
+
+.message.received {
+    background-color: #ffffff;
+    align-self: flex-start;
+    border: 1px solid #ddd;
+}
+.notification-badge {
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 5px;
+    font-size: 0.8rem;
+}
