@@ -53,6 +53,16 @@ function displayMessages() {
     });
 }
 
+// Función para realizar la búsqueda de departamentos
+function filterChats() {
+    const query = document.getElementById("search-chat").value.toLowerCase();
+    const chatItems = document.getElementsByClassName("chat-item");
+    for (let item of chatItems) {
+        const text = item.textContent.toLowerCase();
+        item.style.display = text.includes(query) ? "block" : "none";
+    }
+}
+
 // Evento para enviar un mensaje
 document.getElementById('send-message').onclick = () => {
     const messageInput = document.getElementById('message-input');
@@ -61,7 +71,7 @@ document.getElementById('send-message').onclick = () => {
         displayMessages();
         messageInput.value = '';
     }
-};
+}
 
 // Evento para crear una cuenta
 document.getElementById('create-account').onclick = () => {
@@ -69,7 +79,35 @@ document.getElementById('create-account').onclick = () => {
     if (accountName) {
         createAccount(accountName);
     }
+}
+
+// Función para abrir el chat con un nombre específico
+function openChatByName(chatName) {
+    document.getElementById('chat-title').textContent = chatName;
+    document.getElementById('careers-list').innerHTML = ''; // Oculta las carreras cuando se abre un chat específico
+    document.getElementById('careers-list').style.display = 'none'; // Oculta el contenedor de carreras
+}
+
+// Función para mostrar las carreras de una facultad seleccionada
+function showFacultyCareers(facultyName, careers) {
+    // Cambia el título en el área principal
+    document.getElementById('chat-title').textContent = facultyName;
+    
+    // Selecciona el contenedor de la lista de carreras y lo limpia
+    const careersList = document.getElementById('careers-list');
+    careersList.innerHTML = ''; // Limpia la lista antes de agregar las nuevas carreras
+    careersList.style.display = 'block'; // Muestra el contenedor
+    
+    // Agrega cada carrera en la lista
+    careers.forEach(career => {
+        const careerItem = document.createElement('div');
+        careerItem.classList.add('chat-item');
+        careerItem.textContent = career;
+        careerItem.onclick = () => openChatByName(career); // Define la acción al hacer clic en la carrera
+        careersList.appendChild(careerItem);
+    });
 };
 
+
 // Inicializar chats
-displayChats();
+displayChats
