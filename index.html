@@ -15,23 +15,28 @@
             </header>
             <div id="chat-list" class="chat-list">
                 <!-- Lista fija de departamentos -->
-                <div class="chat-item" onclick="openChatByName('Administración')">Administración</div>
-                <div class="chat-item" onclick="openChatByName('Restaurante Universitario')">Restaurante Universitario</div>
-                <div class="chat-item" onclick="openChatByName('Departamento de TI')">Departamento de TI</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Salud')">Facultad de Salud</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Ingeniería')">Facultad de Ingeniería</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Empresariales')">Facultad de Empresariales</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Teología')">Facultad de Teología</div>
+                <div class="chat-item" onclick="showFacultyCareers('Administración', ['Gestor de talento humano', 'Administración de Recursos Humanos'])">Administración</div>
+                <div class="chat-item" onclick="showFacultyCareers('Restaurante Universitario',['Recepcion', 'Chef Administrativo', 'Encargada Administrativo'])">Restaurante Universitario</div>
+                <div class="chat-item" onclick="showFacultyCareers('Facultad de Salud',['Enfermeria', 'Bioquimica', 'Nutricion', 'Fisioterapia y kineosologia'])">Facultad de Salud</div>
+                <div class="chat-item" onclick="showFacultyCareers('Facultad de Ingeniería', ['Ingeniería de Sistemas', 'Ingeniería Civil', 'Ingeniería en Redes y Telecomunicaciones', 'Arquitectura y Urbanismo', 'Ingeniería Ambiental'])">Facultad de Ingeniería</div>
+                <div class="chat-item" onclick="showFacultyCareers('Facultad de Empresariales', ['Ingeniería Comercial', 'Administración de Empresas', 'Contabilidad'])">Facultad de Empresariales</div>
+                <div class="chat-item" onclick="showFacultyCareers('Facultad de Teología',[ 'Direccion de carrera  Teologia'])">Facultad de Teología</div>
                 <div class="chat-item" onclick="openChatByName('Departamento de Finanzas')">Departamento de Finanzas</div>
                 <div class="chat-item" onclick="openChatByName('Departamento de Marketing')">Departamento de Marketing</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Humanidades')">Facultad de Humanidades</div>
-                <div class="chat-item" onclick="openChatByName('Facultad de Humanidades')">Biblioteca UAB</div>
-                <div class="chat-item" onclick="openChatByName('Departamento de Musica')">Departamento de Musica</div>
+                <div class="chat-item" onclick="showFacultyCareers('Facultad de Humanidades',['Psicologia', 'Psicopedagogia', 'Actividad fisica y Deportes', 'Derecho'])">Facultad de Humanidades</div>
+                <div class="chat-item" onclick="showFacultyCareers('Biblioteca UAB',['Bibliotecario', 'Recepcion', 'Centro de computo'])">Biblioteca UAB</div>
+                <div class="chat-item" onclick="showFacultyCareers('Departamento de Música',['Clases de Piano ','Clases de Guitarra','Clases de Violin','clases de Canto'])">Departamento de Música</div>
             </div>
         </div>
+        
 
         <div id="chat-window" class="chat-window">
-            <h2 id="chat-title">Selecciona un chat</h2>
+            <!-- Contenedor principal para mostrar facultades y submenú -->
+            <div id="main-content">
+                <h2 id="chat-title">Selecciona un chat</h2>
+                <div id="careers-list" class="careers-list"></div>
+            </div>
+
             <div id="messages" class="messages"></div>
             <div class="message-input-container">
                 <input type="text" id="message-input" placeholder="Escribe un mensaje..." />
