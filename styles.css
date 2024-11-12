@@ -15,7 +15,7 @@ body {
 .sidebar {
     width: 25%;
     background-color: #f1f1f1;
-    border-right: 1px solid #ddd;
+    border-right: 1px solid #faf3f3;
     display: flex;
     flex-direction: column;
 }
@@ -118,3 +118,63 @@ button:hover {
     padding: 2px 5px;
     font-size: 0.8rem;
 }
+.status-circle {
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+.online {
+    background-color: green;
+}
+.offline {
+    background-color: gray;
+}
+.submenu {
+    display: none;
+    padding-left: 15px;
+}
+.submenu {
+    display: none;
+    padding-left: 15px;
+  }
+  
+  .submenu li {
+    list-style: none;
+    margin-bottom: 10px;
+  }
+  
+  .submenu li a {
+    text-decoration: none;
+    color: #337ab7;
+  }
+  
+  .submenu li a:hover {
+    color: #23527c;
+  }
+  
+  .submenu li ul {
+    margin-left: 20px;
+  }
+  
+  .submenu li ul li {
+    margin-bottom: 10px;
+  }
+  .chat-item {
+    display: inline-block;
+    width: 45%;
+    padding: 10px;
+    margin: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+  }
+  
+  .chat-item:hover {
+    background-color: #f5f5f5;
+  }
+  
+  .chat-item:active {
+    background-color: #ddd;
+  }
